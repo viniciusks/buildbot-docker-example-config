@@ -24,12 +24,24 @@ services:
     expose:
       - 5432
 
-  worker:
+  example-worker:
     image: "buildbot/buildbot-worker:master"
     environment:
       BUILDMASTER: buildbot
       BUILDMASTER_PORT: 9989
       WORKERNAME: example-worker
+      WORKERPASS: pass
+      WORKER_ENVIRONMENT_BLACKLIST: DOCKER_BUILDBOT* BUILDBOT_ENV_* BUILDBOT_1* WORKER_ENVIRONMENT_BLACKLIST
+
+    links:
+      - buildbot
+
+  worker0:
+    image: "buildbot/buildbot-worker:master"
+    environment:
+      BUILDMASTER: buildbot
+      BUILDMASTER_PORT: 9989
+      WORKERNAME: worker0
       WORKERPASS: pass
       WORKER_ENVIRONMENT_BLACKLIST: DOCKER_BUILDBOT* BUILDBOT_ENV_* BUILDBOT_1* WORKER_ENVIRONMENT_BLACKLIST
 
