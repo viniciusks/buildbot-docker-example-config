@@ -25,7 +25,7 @@ services:
       - 5432
 
   example-worker:
-    image: ootz/buildbot-worker:docker # "buildbot/buildbot-worker:master"
+    image: ootz/buildbot-worker:master # "buildbot/buildbot-worker:master"
     environment:
       BUILDMASTER: buildbot
       BUILDMASTER_PORT: 9989
