@@ -2,6 +2,6 @@ git add .
 git commit
 git push origin master
 
-cd multimaster
+cd simple
 docker-compose stop
 docker-compose up -d

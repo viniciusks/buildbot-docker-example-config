@@ -1,7 +1,7 @@
 version: '2'
 services:
   buildbot:
-    image: buildbot/buildbot-master:master # buildbot/buildbot-master:master
+    image: ootz/buildbot-master:master # buildbot/buildbot-master:master
     env_file:
       - db.env
     environment:
